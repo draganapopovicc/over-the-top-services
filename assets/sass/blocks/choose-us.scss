@@ -1,0 +1,84 @@
+.st-choose-us {
+	position: relative;
+	background: #eceff5;
+
+	.st-choose-us__layer {
+		@include abs;
+		background-image: url(../images/water-splashes.png);
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		opacity: 0.5;
+	}
+
+	.st-choose-us__content {
+		@include flex-col;
+		@include br1;
+		@include bs;
+		gap: 4rem;
+		position: relative;
+		z-index: 2;
+		background: var(--white);
+		padding: 3rem;
+
+		@include limbo-min {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	.b-title {
+		margin-bottom: 4rem;
+	}
+
+	.st-choose-us__all {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: 1fr 1fr;
+
+		@include limbo-only {
+			grid-template-columns: 1fr;
+		}
+
+		@media (max-width: 530px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.st-choose-us_item {
+		@include bs;
+		@include flex-col;
+		@include br1;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		background: var(--color-5);
+		padding: 2rem;
+		font-weight: 500;
+
+		&:nth-child(even) {
+			background: var(--color-4);
+		}
+
+		figure {
+			min-height: 60px;
+
+			img {
+				height: auto;
+				width: unset;
+				max-width: 155px;
+			}
+		}
+
+		.st-choose-us__desc {
+			font-size: 17px;
+			line-height: 1.3;
+			min-height: 38px;
+			text-align: center;
+
+			@include desk-min {
+				font-size: 18px;
+			}
+		}
+	}
+}

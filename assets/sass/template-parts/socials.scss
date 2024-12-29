@@ -1,0 +1,26 @@
+.st-socials {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	.st_icon {
+		color: var(--color-3);
+		border: 1px solid var(--color-3);
+		transition: var(--st);
+		line-height: 1;
+
+		border-radius: 100%;
+		width: 42px;
+		height: 42px;
+		@include flex-center;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

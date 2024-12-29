@@ -1,0 +1,68 @@
+.st-cta {
+	background: var(--color-3);
+	// background: var(--color-3);
+	margin-bottom: -80px;
+	margin-bottom: -9rem;
+	padding-bottom: 10rem;
+	position: relative;
+	z-index: 2;
+
+	.st-sta__wrap {
+		@include flex-col;
+		align-items: center;
+		gap: 5rem;
+
+		@include desk-min {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 5rem;
+		}
+	}
+
+	.st-cta__text {
+		font-weight: 700;
+		color: var(--white);
+		text-align: center;
+		line-height: 1.2;
+		font-size: 5rem;
+
+		@include desk-min {
+			text-align: left;
+		}
+
+		@include mob-only {
+			font-size: 4rem;
+		}
+	}
+
+	.btns {
+		@include tab-max {
+			justify-content: center;
+		}
+
+		.btn {
+			width: 100%;
+
+			@include tab-min {
+				max-width: 300px;
+			}
+		}
+	}
+
+	.btn-1 {
+		color: var(--color-3);
+		background: var(--white);
+
+		&:hover {
+			background: var(--color-3);
+			color: var(--white);
+			box-shadow: inset 0 0 0 2px var(--white);
+		}
+	}
+
+	.btn-3 {
+		&:hover {
+			color: var(--color-3);
+		}
+	}
+}

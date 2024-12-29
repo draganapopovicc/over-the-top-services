@@ -1,0 +1,32 @@
+@import "vendor/normalize";
+@import "vendor/fonts";
+@import "vars-mixins";
+@import "files/globals";
+
+//components
+@import "components/intro";
+@import "components/buttons";
+@import "components/background";
+@import "components/columns";
+@import "files/archive";
+
+//template parts
+@import "template-parts/socials";
+@import "template-parts/contact-info";
+
+//blocks
+@import "blocks/home-hero";
+@import "blocks/inner-hero";
+@import "blocks/contact";
+@import "blocks/cta";
+@import "blocks/basic-section";
+@import "blocks/choose-us";
+@import "blocks/communities";
+@import "blocks/accordion";
+@import "blocks/services";
+@import "blocks/projects";
+@import "blocks/testimonials";
+
+@import "files/nav";
+@import "files/nav-mobile";
+@import "files/footer";

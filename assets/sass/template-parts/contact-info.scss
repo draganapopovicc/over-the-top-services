@@ -1,0 +1,18 @@
+.st_contact-info {
+	@include clean-list;
+	@include flex-col;
+
+	li {
+		a {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			line-height: 1;
+			transition: var(--st);
+		}
+
+		svg {
+			flex: 0 0 20px;
+		}
+	}
+}

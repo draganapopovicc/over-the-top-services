@@ -1,0 +1,50 @@
+.st_inner-hero {
+	position: relative;
+
+	@include limbo-min {
+		min-height: 45svh;
+	}
+
+	@include desk-min {
+		min-height: 60svh;
+	}
+
+	.st_hero__container {
+		@include flex-center;
+		justify-content: center;
+		text-align: center;
+
+		@include limbo-min {
+			min-height: 45svh;
+		}
+
+		@include desk-min {
+			min-height: 60svh;
+		}
+	}
+
+	.block_bg {
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #187bbd48;
+		}
+	}
+
+	.st_inner-hero__content {
+		padding-block: 8rem;
+		width: 100%;
+
+		@include desk-min {
+			margin-top: 100px;
+		}
+	}
+
+	.b-title {
+		align-items: center;
+	}
+}

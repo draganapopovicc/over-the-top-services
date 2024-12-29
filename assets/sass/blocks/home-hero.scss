@@ -1,0 +1,46 @@
+.st_home-hero {
+	position: relative;
+
+	@include desk-min {
+		height: 80svh;
+	}
+
+	.block_bg {
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.374);
+		}
+	}
+
+	.st_home-hero__wrap {
+		display: flex;
+		align-items: center;
+
+		@include desk-min {
+			height: 80svh;
+		}
+	}
+
+	.st_home-hero__content {
+		padding-block: 8rem;
+
+		@include desk-min {
+			margin-top: 100px;
+		}
+	}
+
+	.btns {
+		margin-top: 4rem;
+
+		.btn {
+			@include tab-max {
+				min-width: 30rem;
+			}
+		}
+	}
+}

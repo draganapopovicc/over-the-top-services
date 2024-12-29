@@ -1,0 +1,270 @@
+.sub-menu {
+	@include clean-list;
+}
+
+@include desk-min {
+	.mobile-header__info,
+	.hamburger,
+	.menu-toggle,
+	.button-mobile,
+	.site-logo--mobile {
+		display: none;
+	}
+
+	.header-container {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	.header__right {
+		flex: 1;
+	}
+
+	.header__top {
+		position: relative;
+		padding-block: 10px;
+		padding-inline: 2rem;
+		border-bottom: 1px solid rgb(208, 208, 208);
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+
+		.header__phone {
+			transition: var(--st);
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			color: var(--color-3);
+			margin-right: auto;
+
+			&:hover {
+				color: var(--color-1);
+			}
+		}
+	}
+
+	.header__bottom {
+		position: relative;
+
+		.header__bottom-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	.header-main {
+		position: fixed;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		transition: all 0.5s;
+		background: var(--white);
+		@include bs;
+
+		//sticky start
+		&.sticky-header {
+			background: var(--color-5);
+			transform: translateY(-64px);
+
+			.site-logo {
+				width: 0;
+				transform: translateY(-60px);
+			}
+
+			.main-navigation {
+				#primary-menu {
+					a {
+						font-size: 15px;
+					}
+
+					.sub-menu {
+						background: var(--color-5);
+					}
+
+					> li {
+						> a {
+							font-size: 14px;
+							padding-block: 18px;
+
+							&:before {
+								bottom: 16px;
+							}
+
+							&:after {
+								content: "";
+								bottom: 16px;
+							}
+						}
+					}
+				}
+			}
+		}
+		//sticky end
+
+		.site-logo {
+			margin: 0;
+			transition: all 0.5s;
+			position: relative;
+			width: 270px;
+			width: 28.8rem;
+
+			img {
+				object-fit: contain;
+				height: auto;
+				width: 100%;
+				vertical-align: middle;
+				position: relative;
+				z-index: 4;
+			}
+		}
+
+		.btn {
+			padding: 13px 25px;
+			font-size: 17px;
+		}
+	}
+
+	.main-navigation_wrap {
+		display: block !important;
+	}
+
+	.main-navigation {
+		#primary-menu {
+			@include flex;
+			display: flex !important;
+			margin: 0;
+			padding: 0;
+
+			ul {
+				&.sub-menu {
+					float: left;
+					position: absolute;
+					top: 100%;
+					left: -999em;
+					z-index: 99;
+					min-width: 170px;
+					width: fit-content;
+					display: flex !important;
+					flex-direction: column;
+					background: var(--white);
+					opacity: 0;
+					visibility: hidden;
+					transition: var(--st);
+					top: 100%;
+					right: 0;
+					left: -2rem;
+					box-shadow: 0 5px 22px 0px rgba(15, 53, 103, 0.05);
+					border-top: 2px solid var(--color-3);
+
+					li {
+						padding-inline: 15px;
+						position: relative;
+
+						&:before {
+							content: "";
+							top: 0;
+							bottom: 0;
+							left: 0;
+							width: 0;
+							background: var(--color-3);
+							display: block;
+							position: absolute;
+							transition: var(--st);
+						}
+
+						&:not(:last-child) {
+							a {
+								border-bottom: 1px solid #1892cf;
+							}
+						}
+
+						&:hover {
+							&:before {
+								width: 4px;
+							}
+						}
+					}
+
+					a {
+						display: block;
+						position: relative;
+						overflow: hidden;
+						white-space: nowrap;
+						padding-block: 14px;
+						transition: var(--st);
+						color: var(--color-2);
+						font-size: 16px;
+						font-weight: 500;
+					}
+				}
+			}
+
+			> li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				gap: 4px;
+
+				&:not(:last-child) {
+					margin-right: 3rem;
+				}
+
+				> a {
+					color: var(--color-2);
+					font-size: 15px;
+					font-weight: 500;
+					padding-block: 27px;
+					transition: var(--st);
+					text-transform: uppercase;
+					position: relative;
+				}
+
+				.sub-menu-trigger {
+					pointer-events: none;
+					position: relative;
+					top: 1px;
+
+					svg {
+						transition: var(--st);
+						color: var(--color-2);
+					}
+				}
+			}
+
+			//global li
+			li {
+				&.current_page_item,
+				&.current-menu-parent,
+				&.current-menu-ancestor {
+					> a {
+						color: var(--color-3);
+					}
+
+					> .sub-menu-trigger svg {
+						color: var(--color-3);
+					}
+				}
+
+				&:hover {
+					.sub-menu {
+						opacity: 1;
+						visibility: visible;
+					}
+
+					> a {
+						color: var(--color-3);
+					}
+
+					> .sub-menu-trigger svg {
+						transform: rotate3d(1, 0, 0, 180deg);
+						color: var(--color-3);
+					}
+				}
+			}
+		}
+	}
+}
